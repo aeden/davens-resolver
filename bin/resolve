@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+$:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+require 'davens'
+
+require 'pp'
+resolver = Davens::Resolver.new
+ARGV.each do |name|
+  p "#{name} -> #{resolver.resolve(name)}"
+end
+
